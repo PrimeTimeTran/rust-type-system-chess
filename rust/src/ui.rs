@@ -181,6 +181,7 @@ impl<C: ColorEn> MakeEMResultEn for Checkmate<C> {
 pub(crate) trait RunMakeEM<F: SquareTy, T: SquareTy, P: MaybePiece>: StateTy {
     type Output: MakeEMResultEn;
 }
+
 pub(crate) type MakeEM<S, F, T, P = NoPiece> = <S as RunMakeEM<F, T, P>>::Output;
 
 impl<S: StateTy, F: SquareTy, T: SquareTy, P: MaybePiece> RunMakeEM<F, T, P> for S
